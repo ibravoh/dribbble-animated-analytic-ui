@@ -108,7 +108,7 @@ export function Ramos() {
         </motion.div>
       </div>
       <div className="multi-grid-background mt-28 rounded-bl-[100px] rounded-br-[100px] px-32 h-max !py-0">
-        <h1 className="text-[20vw] mt-20 font-bold text-nowrap gap-x-4 text-[#fe4a22]">
+        <h1 className="text-[20vw] mt-[70px] font-bold text-nowrap gap-x-4 text-[#fe4a22]">
           <AnimatedText
             text={"Ramos"}
             variants={animatedTextVariant}
