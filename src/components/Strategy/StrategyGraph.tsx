@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Hexagon } from 'lucide-react';
+import { AnimatedCounter } from "../AnimatedCounter";
 
 // Register the required components with Chart.js
 ChartJS.register(
@@ -75,7 +76,7 @@ const VisitStatistics = () => {
           <h4 className="text-white text-xs font-light">Rate</h4>
           <Hexagon className="font-light text-[#ffece8]" size={20} />
         </div>
-        <h4 className="font-light text-lg">+58%</h4>
+        <h4 className="font-light text-lg">+<AnimatedCounter from={50} to={58}/>%</h4>
       </div>
     </div>
   );

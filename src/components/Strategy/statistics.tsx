@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import VisitStatistics from "./StrategyGraph";
 import { ProgressBar } from "../ProgressBar";
 import { CircleArrowUp, Layers3 } from "lucide-react";
+import { AnimatedCounter } from "../AnimatedCounter";
 export default function Statistics() {
   return (
     <div className="rounded-2xl bg-white pt-8 shadow-lg flex pl-8 justify-between w-full">
@@ -47,7 +48,7 @@ export default function Statistics() {
               </span>
               <h4>
                 <span className="text-sm font-light">$</span>{" "}
-                <span>246,2K</span>
+                <AnimatedCounter from={2000} to={2462} />K
               </h4>
             </div>
           </div>
@@ -56,7 +57,9 @@ export default function Statistics() {
             <span className="text-xs font-light">Visitors</span>
             <ProgressBar color="#3ec57c" height={3} value={30} />
             <div className="relative">
-              <h4 className="text-lg font-light">56K</h4>
+              <h4 className="text-lg font-light">
+                <AnimatedCounter from={40} to={56}/>K
+              </h4>
               <div className="flex absolute -top-0 left-10 text-[#3ec57c] text-xs gap-x-1">
                 <CircleArrowUp size={16} color="#3ec57c" /> <span> +4%</span>
               </div>

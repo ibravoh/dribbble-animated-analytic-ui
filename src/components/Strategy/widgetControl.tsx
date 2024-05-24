@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CircleArrowUp, Layers3 } from "lucide-react";
+import { AnimatedCounter } from "../AnimatedCounter";
 export default function WidgitControl() {
   return (
     <div className="rounded-2xl bg-[#0d0d0d] py-12 shadow-2xl flex px-9 justify-between w-full text-white flex-col">
@@ -39,7 +40,7 @@ export default function WidgitControl() {
           <h4 className="text-xs font-light text-left">Transactions</h4>
           <div className="flex mt-5">
             <div className="relative">
-              <h4 className="text-2xl font-light">43k</h4>
+              <h4 className="text-2xl font-light"><AnimatedCounter from ={10} to={43}/>k</h4>
               <div className="flex absolute -top-3 left-8 text-[#3ec57c] text-xs gap-x-1">
                 <CircleArrowUp size={16} color="#3ec57c" /> <span> +14%</span>
               </div>

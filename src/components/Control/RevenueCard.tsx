@@ -1,4 +1,5 @@
 import { ProgressBar } from "..";
+import { AnimatedCounter } from "../AnimatedCounter";
 
 export const PriceItem = ({
   imgUrl,
@@ -26,7 +27,7 @@ export const RevenueCard = () => {
       <h4 className="text-xs text-[#a5a5a5]">Sales revenue</h4>
 
       <span className="text-2xl mt-2">
-        <span className="text-sm">$</span>131.2K
+        <span className="text-sm">$</span><AnimatedCounter from={200} to={1312}/>K
       </span>
 
       <div className="rounded-2xl flex justify-center items-center mt-3 gap-x-1 w-full">

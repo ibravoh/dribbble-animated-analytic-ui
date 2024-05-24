@@ -1,34 +1,40 @@
-import {
-  animate,
-  motion,
-  useInView,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
-import { useEffect, useRef } from "react";
+import { KeyframeOptions, animate, motion, useInView } from "framer-motion";
+import { useLayoutEffect, useRef } from "react";
 
 type CounterProps = {
   from: number;
   to: number;
-  suffix?:string
+  option?: KeyframeOptions;
 };
 
-function AnimatedCounter({ from, to,suffix }: CounterProps) {
-  const count = useMotionValue(from);
-  const rounded = useTransform(count, (latest) => {
-    return Math.round(latest);
-  });
-  const ref = useRef(null);
-  const inView = useInView(ref);
+function AnimatedCounter({ from, to, option }: CounterProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: false });
 
-  // while in view animate the count
-  useEffect(() => {
-    if (inView) {
-      animate(count, to, { duration: 2 });
-    }
-  }, [count, inView, to]);
+  useLayoutEffect(() => {
+    const elem = ref.current;
+    if (!elem) return;
+    if (!inView) return;
+    elem.textContent = String(from);
+    const controls = animate(from, to, {
+      duration: 2,
+      ease: "easeOut",
+      ...option,
+      onUpdate(value) {
+        // elem.textContent = Intl.NumberFormat("en-US", {
+        //   style: "currency",
+        //   currency: "USD",
+        // }).format(Number(value.toFixed(0)));
+        elem.textContent = value.toFixed(0).toLocaleString();
+        //
+      },
+    });
+    return () => {
+      controls.stop();
+    };
+  }, [inView, to, ref, from]);
 
-  return <motion.span ref={ref}>{`${rounded.get()}`}</motion.span>;
+  return <motion.span ref={ref} />;
 }
 
 export { AnimatedCounter };
