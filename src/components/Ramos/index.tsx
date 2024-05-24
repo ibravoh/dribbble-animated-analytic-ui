@@ -46,7 +46,7 @@ export function Ramos() {
       initial={{ translateY: 50 }}
       whileInView={{ translateY: -70 }}
       transition={{ duration: 2, type: "spring", ease: "easeInOut" }}
-      className="bg-[#f9f9f9] rounded-[100px] pt-20 min-h-screen relative"
+      className="bg-[#f9f9f9] rounded-[100px] pt-20 relative"
     >
       <div className="flex px-32">
         <div>
@@ -108,7 +108,7 @@ export function Ramos() {
         </motion.div>
       </div>
       <div className="multi-grid-background mt-28 rounded-bl-[100px] rounded-br-[100px] px-32 h-max !py-0">
-        <h1 className="text-[300px] text-center -mt-20 flex items-center justify-between font-bold text-nowrap gap-x-4 text-[#fe4a22]">
+        <h1 className="text-[20vw] mt-40 font-bold text-nowrap gap-x-4 text-[#fe4a22]">
           <AnimatedText
             text={"Ramos"}
             variants={animatedTextVariant}
@@ -117,5 +117,7 @@ export function Ramos() {
         </h1>
       </div>
     </motion.section>
+
   );
 }
+// 

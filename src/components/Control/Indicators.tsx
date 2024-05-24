@@ -8,7 +8,7 @@ export const Indicator = () => {
     <GridCard>
       <div className="w-full flex relative justify-center flex-col mt-0.5 items-center flex-1 h-full">
         <motion.div
-          className="absolute z-30 top-20"
+          className="absolute z-30 top-20 w-[100%]"
           whileInView={{ top: 80 }}
           initial={{ top: 120 }}
           transition={{ type: "spring", duration: 3 }}
