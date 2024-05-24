@@ -5,6 +5,8 @@ import Header from "./components/header";
 function App() {
   
   useEffect(() => {
+    window.scrollTo(0, 0);
+    
     window.addEventListener('load', ()=>{
       window.scrollTo(0, 0);
     })
