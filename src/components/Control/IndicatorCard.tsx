@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Bar } from "./Bar";
-// import IndicatorStatistics from "./IndicatorStatistics";
 
 const bar = [
     {
@@ -57,7 +56,7 @@ export const IndicatorCard = ({
         </div>
 
         <div className="flex gap-x-2 px-8">
-          {bar.map((_, i) => {
+          {bar.map((_,) => {
             return <Bar value={_.value} color={_.color} legend={_.legend} />;
           })}
         </div>

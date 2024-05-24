@@ -32,7 +32,7 @@ function AnimatedCounter({ from, to, option }: CounterProps) {
     return () => {
       controls.stop();
     };
-  }, [inView, to, ref, from]);
+  }, [inView, to, ref, from, option]);
 
   return <motion.span ref={ref} />;
 }
